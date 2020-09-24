@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Connection</title>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCzgNkM0X7shPYUyUwIKFlVinNTtnNMn9s",
+    authDomain: "test-37e00.firebaseapp.com",
+    databaseURL: "https://test-37e00.firebaseio.com",
+    projectId: "test-37e00",
+    storageBucket: "test-37e00.appspot.com",
+    messagingSenderId: "1027528548618",
+    appId: "1:1027528548618:web:15d72d670bed4154561af3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+    <div>
+        <input type="text" name="name" id="name" placeholder="enter name... ">
+        <br />
+        <input type="text" name="roll" id="roll" placeholder="enter roll...">
+        <br />
+        <input type="submit" value="submit" id="submit" onclick="getData()">
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
