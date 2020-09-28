@@ -1,12 +1,10 @@
 *{
   font-family:poppins;
 }
-div,h2{
-  margin-left:7px;
-}
 .animate{
   transition: 0.9s ease;
   color:#1279b9;
+  cursor: pointer;
 }
 .animate:hover{
   margin-right: 7px;
