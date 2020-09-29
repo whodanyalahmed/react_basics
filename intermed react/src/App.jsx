@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Header from './components/header'
+import {Header,Logo} from './components/header'
 import Footer from './components/Footer'
 // function App() {
 //   let todo = [{name:'Danyal'},{name: "Rohit"}]
@@ -37,37 +37,67 @@ import Footer from './components/Footer'
 //     )
 //   }
 // }
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& > *': {
+//       margin: theme.spacing(1),
+//       width: '25ch',
+//     },
+//   },
+// }));
 
-function BasicTextFields() {
-  const classes = useStyles();
 
-  return (
-    <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-    </form>
-  );
-}
 
 
 
 class App extends Component{
+  // This is start topic
+  constructor(){
+    super()
+    this.state = {
+      name : "Danyal Ahmed",
+      email : "Daniahmedkhatri@gmail.com",
+      value : ""
+    }
+  
+  }
+  set_name = () => {
+    this.setState({
+      name: this.state.name
+    })
+  }
+  get_name = () => {
+    console.log(this.state.name)
+  }
+  handleChange (e){
+    this.setState({
+      [e.target.name] : e.target.value
+    })
+
+  }
  render(){ 
   let todo = [{name:'Danyal',so : 'GH'},{name: "Rohit",so: "Motilal"}];
   return (
       <div className={'container'}>
+        <Logo />
         <Header />
-        {/* <Header /> */}
+        <h2>Hello! welcome back... {this.state.name}</h2>
+        <h3>email : {this.state.email}</h3>
+        {/* use either value: value or name: value...both will set that attribute as value */}
+        {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" defaultValue={this.state.name}
+        onChange={event => {
+          const { value } = event.target;
+          this.setState({ value : value }); }} /> */}
+        {/* <input type="input" onChange={(e)=>this.setState({value : e.target.value})} />  */}
+        
+        <TextField id="outlined-basic" name="name" label="Outlined" variant="outlined" defaultValue={this.state.name}
+        onChange={(e) => this.handleChange(e)} />
+        <button className="btn btn-primary " onClick= {this.set_namec}>Set</button>
+        <button className="btn btn-dark " onClick= {this.get_name}>Get</button>
+        <br/>
         <h2>Some text in the content <span className="animate">area</span>.</h2>
         <ul>
           {todo.map((value,index) => {
@@ -75,7 +105,7 @@ class App extends Component{
           })
           }
         </ul>
-        <BasicTextFields />
+
         <button className="btn btn-primary ">Primary</button>
         <br/> 
         <br/> 
@@ -86,6 +116,14 @@ class App extends Component{
 }
 }
 
+// function BasicTextFields() {
+//   const classes = useStyles();
 
+//   return (
+//     <form className={classes.root} noValidate autoComplete="off">
+      
+//     </form>
+//   );
+// }
 
 export default App;

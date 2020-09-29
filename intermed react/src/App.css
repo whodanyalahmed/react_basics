@@ -1,6 +1,9 @@
 *{
   font-family:poppins;
 }
+.btn{
+  margin-left:8px;
+}
 .animate{
   transition: 0.9s ease;
   color:#1279b9;
