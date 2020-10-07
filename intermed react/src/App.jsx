@@ -72,6 +72,9 @@ class App extends Component{
   get_name = () => {
     console.log(this.state.name)
   }
+  get_props = (props) => {
+    console.log(props)
+  }
   handleChange (e){
     this.setState({
       [e.target.name] : e.target.value
@@ -83,7 +86,9 @@ class App extends Component{
   return (
       <div className={'container'}>
         <Logo />
-        <Header />
+        {/* page is prop */}
+        <Header get_props={this.get_props} page={this.state.name} email = {this.state.email} name = "App page"/>
+
         <h2>Hello! welcome back... {this.state.name}</h2>
         <h3>email : {this.state.email}</h3>
         {/* use either value: value or name: value...both will set that attribute as value */}

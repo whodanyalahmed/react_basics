@@ -3,9 +3,12 @@ import imgfile from '../images/dior.png'
 // eslint-disable-next-line
 class Header extends React.Component{
     render(){
-        
+      console.log(this.props.name)
         return(
-            <h1>This is the <span className="animate">header</span>.</h1>
+          <div>
+            <h1>{this.props.name}</h1>
+            <h2>This is the <span className="animate">header</span>.</h2>
+          </div>
         )
     }
 }
