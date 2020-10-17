@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import {
-    BrowserRouter as Router,Route
+    BrowserRouter as Router,    Route
 
 } from 'react-router-dom';
 import About from '../container/About';
@@ -12,9 +12,9 @@ class AppRouter extends Component{
     render(){
         return(
             <Router>
-                {/* <Route path="/" component={Index} /> */}
+                <Route exact path="/" component={Index} />
 
-                <Route path="/" component={Home} />
+                <Route path="/home" component={Home} />
                 <Route path="/about" component={About} />
 
             </Router>
